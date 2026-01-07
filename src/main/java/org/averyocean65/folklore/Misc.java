@@ -30,4 +30,9 @@ public class Misc {
     public static int lcm(int a, int b) {
         return (a * b) / gcd(a, b);
     }
+
+    public static boolean areFloatsEqual(float a, float b) {
+        float error = Math.abs(a - b);
+        return error < 0.00001f;
+    }
 }

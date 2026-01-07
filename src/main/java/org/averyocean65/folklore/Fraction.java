@@ -51,6 +51,11 @@ public class Fraction {
         return new Fraction(denominator, numerator);
     }
 
+    /**
+     * Scales a fraction by a scalar value. i.e. 1/2 scaled with 4 -> 4/8
+     * @param scalar
+     * @return the scaled fraction.
+     */
     public Fraction scaleFraction(int scalar) {
         return multiply(new Fraction(scalar, scalar));
     }
@@ -64,11 +69,9 @@ public class Fraction {
     }
 
     public Fraction subtract(Fraction other) {
-        int lcm = Misc.lcm(denominator, other.getDenominator());
-        Fraction a = scaleFraction(lcm / denominator);
-        Fraction b = other.scaleFraction(lcm / other.getDenominator());
-
-        return new Fraction(a.getNumerator() - b.getNumerator(), lcm);
+        Fraction duplicate = other;
+        duplicate.setNumerator(other.getNumerator() * -1);
+        return add(duplicate);
     }
 
     public Fraction multiply(Fraction other) {
@@ -77,5 +80,15 @@ public class Fraction {
 
     public Fraction divide(Fraction other) {
         return multiply(other.inverse());
+    }
+
+    @Override
+    public boolean equals(Object other) throws IllegalArgumentException {
+        if(other.getClass() == Fraction.class) {
+            Fraction frac = (Fraction)other;
+            return Misc.areFloatsEqual(toDecimal(), frac.toDecimal());
+        }
+
+        throw new IllegalArgumentException();
     }
 }

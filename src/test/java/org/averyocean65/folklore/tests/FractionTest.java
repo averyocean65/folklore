@@ -113,4 +113,17 @@ public class FractionTest {
 
         decimalTest(result, expected.toDecimal());
     }
+
+    @Test
+    public void testEquals() {
+        System.out.println("-- Testing equality --");
+
+        Fraction a = new Fraction(3, 4);
+        Fraction b = new Fraction(12, 16);
+        Assert.assertTrue(a.equals(b));
+
+        a = new Fraction(6, 12);
+        b = new Fraction(12, 24);
+        Assert.assertTrue(a.equals(b));
+    }
 }
