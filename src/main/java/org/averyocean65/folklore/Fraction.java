@@ -55,10 +55,6 @@ public class Fraction {
         return multiply(new Fraction(scalar, scalar));
     }
 
-    public Fraction multiply(Fraction other) {
-        return new Fraction(numerator * other.getNumerator(), denominator * other.getDenominator());
-    }
-
     public Fraction add(Fraction other) {
         int lcm = Misc.lcm(denominator, other.getDenominator());
         Fraction a = scaleFraction(lcm / denominator);
@@ -73,5 +69,13 @@ public class Fraction {
         Fraction b = other.scaleFraction(lcm / other.getDenominator());
 
         return new Fraction(a.getNumerator() - b.getNumerator(), lcm);
+    }
+
+    public Fraction multiply(Fraction other) {
+        return new Fraction(numerator * other.getNumerator(), denominator * other.getDenominator());
+    }
+
+    public Fraction divide(Fraction other) {
+        return multiply(other.inverse());
     }
 }

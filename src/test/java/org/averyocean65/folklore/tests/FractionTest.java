@@ -94,4 +94,23 @@ public class FractionTest {
 
         decimalTest(result, expected.toDecimal());
     }
+
+    @Test
+    public void testDivision() {
+        System.out.println("-- Testing division --");
+
+        Fraction a = new Fraction(8, 7);
+        Fraction b = new Fraction(65, 1300);
+        Fraction expected = new Fraction(160, 7);
+        Fraction result = a.divide(b);
+
+        decimalTest(result, expected.toDecimal());
+
+        a = new Fraction(-87, 178);
+        b = new Fraction(69, 8);
+        expected = new Fraction(-116, 2047);
+        result = a.divide(b);
+
+        decimalTest(result, expected.toDecimal());
+    }
 }
