@@ -37,4 +37,42 @@ public class FractionTest {
         expected = new Fraction(1, 3);
         decimalTest(extrapolated.simplify(), expected.toDecimal());
     }
+
+    @Test
+    public void testAddition() {
+        System.out.println("-- Testing addition --");
+
+        Fraction a = new Fraction(2, 5);
+        Fraction b = new Fraction(6, 8);
+        Fraction expected = new Fraction(23, 20);
+        Fraction result = a.add(b);
+
+        decimalTest(result, expected.toDecimal());
+
+        a = new Fraction(   -57, 92);
+        b = new Fraction(21, 106);
+        expected = new Fraction(-2055, 4876);
+        result = a.add(b);
+
+        decimalTest(result, expected.toDecimal());
+    }
+
+    @Test
+    public void testSubtraction() {
+        System.out.println("-- Testing subtraction --");
+
+        Fraction a = new Fraction(5, 4);
+        Fraction b = new Fraction(7, 21);
+        Fraction expected = new Fraction(11, 12);
+        Fraction result = a.subtract(b);
+
+        decimalTest(result, expected.toDecimal());
+
+        a = new Fraction(   -52, 98);
+        b = new Fraction(21, 106);
+        expected = new Fraction(-3785, 5194);
+        result = a.subtract(b);
+
+        decimalTest(result, expected.toDecimal());
+    }
 }
