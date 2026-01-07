@@ -32,4 +32,13 @@ public class Fraction {
     public float toDecimal() {
         return (float)numerator / (float)denominator;
     }
+
+    /**
+     * Simplifies the fraction into the smallest form factor it can be.
+     * @return the simplified fraction.
+     */
+    public Fraction simplify() {
+        int gcd = Misc.gcd(numerator, denominator);
+        return new Fraction(numerator / gcd, denominator / gcd);
+    }
 }
