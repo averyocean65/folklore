@@ -75,4 +75,23 @@ public class FractionTest {
 
         decimalTest(result, expected.toDecimal());
     }
+
+    @Test
+    public void testMultiplication() {
+        System.out.println("-- Testing multiplication --");
+
+        Fraction a = new Fraction(3, 9);
+        Fraction b = new Fraction(1, 2);
+        Fraction expected = new Fraction(3, 18);
+        Fraction result = a.multiply(b);
+
+        decimalTest(result, expected.toDecimal());
+
+        a = new Fraction(   -2, 3);
+        b = new Fraction(25, 100);
+        expected = new Fraction(-50, 300);
+        result = a.multiply(b);
+
+        decimalTest(result, expected.toDecimal());
+    }
 }
