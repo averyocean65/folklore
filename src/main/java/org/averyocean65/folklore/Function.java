@@ -64,6 +64,9 @@ public class Function {
                 case Division -> {
                     totalValue /= sampled;
                 }
+                case End -> {
+                    break;
+                }
                 default -> throw new IllegalStateException("parts[%d].operatorToNext()");
             }
 
