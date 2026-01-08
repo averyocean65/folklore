@@ -70,5 +70,7 @@ public class Function {
             // Get the new leftover operator
             leftover = parts[i].operatorToNext();
         }
+
+        return totalValue;
     }
 }
