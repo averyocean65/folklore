@@ -4,6 +4,11 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
+    /**
+     * Creates a new fraction
+     * @param numerator the number on top of the fraction
+     * @param denominator the number on the bottom of the fraction
+     */
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
@@ -45,7 +50,7 @@ public class Fraction {
     /**
      * Swaps the numerator and denominator of a fraction.
      * i.e. 17/4 --> 4/17
-     * @return the inversed fraction.
+     * @return the inverted fraction.
      */
     public Fraction inverse() {
         return new Fraction(denominator, numerator);
@@ -60,6 +65,11 @@ public class Fraction {
         return multiply(new Fraction(scalar, scalar));
     }
 
+    /**
+     * Adds two fractions together
+     * @param other
+     * @return the added together fractions
+     */
     public Fraction add(Fraction other) {
         int lcm = Misc.lcm(denominator, other.getDenominator());
         Fraction a = scaleFraction(lcm / denominator);
@@ -68,16 +78,31 @@ public class Fraction {
         return new Fraction(a.getNumerator() + b.getNumerator(), lcm);
     }
 
+    /**
+     * Subtracts two fractions from another
+     * @param other the fraction to subtract by
+     * @return the added together fractions
+     */
     public Fraction subtract(Fraction other) {
         Fraction duplicate = other;
         duplicate.setNumerator(other.getNumerator() * -1);
         return add(duplicate);
     }
 
+    /**
+     * multiplies two fractions together
+     * @param other
+     * @return the multiplied fractions
+     */
     public Fraction multiply(Fraction other) {
         return new Fraction(numerator * other.getNumerator(), denominator * other.getDenominator());
     }
 
+    /**
+     * Divides two fractions from another
+     * @param other the fraction to divide with
+     * @return the divided fraction
+     */
     public Fraction divide(Fraction other) {
         return multiply(other.inverse());
     }
@@ -87,6 +112,11 @@ public class Fraction {
         if(other.getClass() == Fraction.class) {
             Fraction frac = (Fraction)other;
             return Misc.areFloatsEqual(toDecimal(), frac.toDecimal());
+        }
+
+        if(other.getClass() == Float.class) {
+            float num = (float)other;
+            return Misc.areFloatsEqual(toDecimal(), num);
         }
 
         throw new IllegalArgumentException();
