@@ -5,8 +5,8 @@ import java.util.List;
 public class Function {
     private FunctionPart[] parts;
 
-    public Function(FunctionPart[] pParts) {
-        parts = pParts;
+    public Function(FunctionPart[] parts) {
+        this.parts = parts;
     }
 
     public FunctionPart[] getParts() {
