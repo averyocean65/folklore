@@ -30,4 +30,11 @@ public class MiscTest {
         result = Misc.factorial(10);
         Assert.assertEquals(expected, result);
     }
+
+    @Test
+    public void testRoots() {
+        float cbrtExpected = (float)Math.cbrt(125);
+        float cbrtResult = Misc.Root(125, 3);
+        Assert.assertTrue(Misc.areFloatsEqual(cbrtExpected, cbrtResult));
+    }
 }

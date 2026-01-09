@@ -43,4 +43,25 @@ public class Misc {
         float error = Math.abs(a - b);
         return error < 0.00001f;
     }
+
+    public static float Root(float base, float n) {
+        if(areFloatsEqual(n, 1)) {
+            return base;
+        }
+
+        if(areFloatsEqual(n, 2)) {
+            return (float)Math.sqrt(base);
+        }
+
+        if(areFloatsEqual(n, 3)) {
+            return (float)Math.cbrt(base);
+        }
+
+        float unrounded = (float) Math.pow(base, 1 / n);
+        return (float) Math.round(unrounded * 1000f) / 1000f;
+    }
+
+    public static float Log(float num, float base) {
+        return (float)(Math.log(num) / Math.log(base));
+    }
 }
