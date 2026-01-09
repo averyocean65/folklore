@@ -31,6 +31,14 @@ public class Misc {
         return (a * b) / gcd(a, b);
     }
 
+    public static int factorial(int base) {
+        int totalValue = 1;
+        for(int i = base; i > 1; i--) {
+            totalValue *= i;
+        }
+        return totalValue;
+    }
+
     public static boolean areFloatsEqual(float a, float b) {
         float error = Math.abs(a - b);
         return error < 0.00001f;
