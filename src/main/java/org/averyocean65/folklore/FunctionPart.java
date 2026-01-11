@@ -11,6 +11,7 @@ public record FunctionPart(
    double sampleOwnValue(double x) {
        double actualAddition = addition;
        switch(type) {
+           case Default -> { }
            case Log -> {
                x = Misc.Log(x, addition);
                actualAddition = 0;
@@ -29,16 +30,41 @@ public record FunctionPart(
                x = Math.pow(addition, x);
                actualAddition = 0;
            }
+
+           case Sin -> {
+               x = Math.sin(addition * x);
+               actualAddition = 0;
+           }
+           case Cos -> {
+               x = Math.cos(addition * x);
+               actualAddition = 0;
+           }
+           case Tan -> {
+               x = Math.tan(addition * x);
+               actualAddition = 0;
+           }
+           case ArcSin -> {
+               x = Math.asin(addition * x);
+               actualAddition = 0;
+           }
+           case ArcCos -> {
+               x = Math.acos(addition * x);
+               actualAddition = 0;
+           }
+           case ArcTan -> {
+               x = Math.atan(addition * x);
+               actualAddition = 0;
+           }
        }
 
        // a^0 = 1
        if(Misc.areDoublesEqual(exponent, 0)) {
-           return amplification + addition;
+           return amplification + actualAddition;
        }
 
        // a^1 = a
        if(Misc.areDoublesEqual(exponent, 1)) {
-           return amplification * (x + xShift) + addition;
+           return amplification * (x + xShift) + actualAddition;
        }
 
        return amplification * Math.pow(x + xShift, exponent) + actualAddition;
