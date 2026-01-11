@@ -7,11 +7,13 @@ package org.averyocean65.folklore;
  * {@link FunctionPartType#Log} turns x into {@code log_a(x)} where {@code a} is {@link FunctionPart#addition()}<br>
  * {@link FunctionPartType#Sqrt} turns x into {@code sqrt(x)}<br>
  * {@link FunctionPartType#Root} turns x into {@code root_a(x)} where {@code a} is {@link FunctionPart#addition()}<br>
+ * {@link FunctionPartType#xAsExp} turns x into {@code a^x} where {@code a} is {@link FunctionPart#addition()}<br>
  */
 public enum FunctionPartType {
     Default,
     Log,
     Ln,
     Root,
-    Sqrt
+    Sqrt,
+    xAsExp
 }

@@ -34,8 +34,8 @@ public class Fraction {
      * Returns the fraction represented as a decimal number.
      * @return the decimal value.
      */
-    public float toDecimal() {
-        return (float)numerator / (float)denominator;
+    public double toDecimal() {
+        return (double)numerator / (double)denominator;
     }
 
     /**
@@ -111,12 +111,12 @@ public class Fraction {
     public boolean equals(Object other) throws IllegalArgumentException {
         if(other.getClass() == Fraction.class) {
             Fraction frac = (Fraction)other;
-            return Misc.areFloatsEqual(toDecimal(), frac.toDecimal());
+            return Misc.areDoublesEqual(toDecimal(), frac.toDecimal());
         }
 
-        if(other.getClass() == Float.class) {
-            float num = (float)other;
-            return Misc.areFloatsEqual(toDecimal(), num);
+        if(other.getClass() == Double.class) {
+            double num = (double)other;
+            return Misc.areDoublesEqual(toDecimal(), num);
         }
 
         throw new IllegalArgumentException();

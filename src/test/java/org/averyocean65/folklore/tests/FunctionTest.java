@@ -14,20 +14,20 @@ public class FunctionTest {
         };
 
         Function squareFunction = new Function(squareFunctionParts);
-        float expectedZero = 0;
-        float expectedOne = 1;
-        float expectedTwo = 4;
-        float expectedThree = 9;
+        double expectedZero = 0;
+        double expectedOne = 1;
+        double expectedTwo = 4;
+        double expectedThree = 9;
 
-        float sampledZero = squareFunction.sampleFunction(0);
-        float sampledOne = squareFunction.sampleFunction(1);
-        float sampledTwo = squareFunction.sampleFunction(2);
-        float sampledThree = squareFunction.sampleFunction(3);
+        double sampledZero = squareFunction.sampleFunction(0);
+        double sampledOne = squareFunction.sampleFunction(1);
+        double sampledTwo = squareFunction.sampleFunction(2);
+        double sampledThree = squareFunction.sampleFunction(3);
 
-        Assert.assertTrue(Misc.areFloatsEqual(expectedZero, sampledZero));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedOne, sampledOne));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedTwo, sampledTwo));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedThree, sampledThree));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedZero, sampledZero));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedOne, sampledOne));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedTwo, sampledTwo));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedThree, sampledThree));
     }
 
     @Test
@@ -39,24 +39,24 @@ public class FunctionTest {
                 new FunctionPart(5, 3, -2, 0, Operator.Addition, FunctionPartType.Default),
 
                 // end operator is optional in this case
-                new FunctionPart(0.0025f, 2, 0, -2, Operator.End, FunctionPartType.Default)
+                new FunctionPart(0.0025, 2, 0, -2, Operator.End, FunctionPartType.Default)
         };
 
         Function polynomial = new Function(polynomialParts);
-        float expectedZero = -42;
-        float expectedOne = -6.9975f;
-        float expectedTwo = -1.99f;
-        float expectedThree = 3.0225f;
+        double expectedZero = -42;
+        double expectedOne = -6.9975;
+        double expectedTwo = -1.99;
+        double expectedThree = 3.0225;
 
-        float sampledZero = polynomial.sampleFunction(0);
-        float sampledOne = polynomial.sampleFunction(1);
-        float sampledTwo = polynomial.sampleFunction(2);
-        float sampledThree = polynomial.sampleFunction(3);
+        double sampledZero = polynomial.sampleFunction(0);
+        double sampledOne = polynomial.sampleFunction(1);
+        double sampledTwo = polynomial.sampleFunction(2);
+        double sampledThree = polynomial.sampleFunction(3);
 
-        Assert.assertTrue(Misc.areFloatsEqual(expectedZero, sampledZero));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedOne, sampledOne));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedTwo, sampledTwo));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedThree, sampledThree));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedZero, sampledZero));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedOne, sampledOne));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedTwo, sampledTwo));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedThree, sampledThree));
     }
 
     @Test
@@ -69,16 +69,16 @@ public class FunctionTest {
         };
 
         Function polynomial = new Function(polynomialParts);
-        float expectedOne = 0;
-        float expectedTwo = 0.6931471805599f;
-        float expectedThree = 1.0986122886681f;
+        double expectedOne = 0;
+        double expectedTwo = 0.6931471805599;
+        double expectedThree = 1.0986122886681;
 
-        float sampledOne = polynomial.sampleFunction(1);
-        float sampledTwo = polynomial.sampleFunction(2);
-        float sampledThree = polynomial.sampleFunction(3);
+        double sampledOne = polynomial.sampleFunction(1);
+        double sampledTwo = polynomial.sampleFunction(2);
+        double sampledThree = polynomial.sampleFunction(3);
 
-        Assert.assertTrue(Misc.areFloatsEqual(expectedOne, sampledOne));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedTwo, sampledTwo));
-        Assert.assertTrue(Misc.areFloatsEqual(expectedThree, sampledThree));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedOne, sampledOne));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedTwo, sampledTwo));
+        Assert.assertTrue(Misc.areDoublesEqual(expectedThree, sampledThree));
     }
 }

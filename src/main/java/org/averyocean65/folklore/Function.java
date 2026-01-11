@@ -33,15 +33,15 @@ public class Function {
         parts[index] = replace;
     }
 
-    public float sampleFunction(float x) throws IllegalStateException {
+    public double sampleFunction(double x) throws IllegalStateException {
         if(parts.length == 1) {
             return parts[0].sampleOwnValue(x);
         }
 
         Operator leftover = null;
-        float totalValue = 0.0f;
+        double totalValue = 0.0f;
         for(int i = 0; i < parts.length; i++) {
-            float sampled = parts[i].sampleOwnValue(x);
+            double sampled = parts[i].sampleOwnValue(x);
 
             // Skip operator work if we're on the first part of the function
             if(i == 0) {

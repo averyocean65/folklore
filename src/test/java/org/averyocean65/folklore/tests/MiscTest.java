@@ -7,17 +7,17 @@ import org.junit.Test;
 public class MiscTest {
     @Test
     public void testFloatEquality() {
-        float a = 0.001f;
-        float b = 0.02f;
-        Assert.assertFalse(Misc.areFloatsEqual(a, b));
+        double a = 0.001f;
+        double b = 0.02f;
+        Assert.assertFalse(Misc.areDoublesEqual(a, b));
 
         a = 1e8f;
         b = 1e8f;
-        Assert.assertTrue(Misc.areFloatsEqual(a, b));
+        Assert.assertTrue(Misc.areDoublesEqual(a, b));
 
         a = 1e-6f;
         b = 1e-6f;
-        Assert.assertTrue(Misc.areFloatsEqual(a, b));
+        Assert.assertTrue(Misc.areDoublesEqual(a, b));
     }
 
     @Test
@@ -33,8 +33,8 @@ public class MiscTest {
 
     @Test
     public void testRoots() {
-        float cbrtExpected = (float)Math.cbrt(125);
-        float cbrtResult = Misc.Root(125, 3);
-        Assert.assertTrue(Misc.areFloatsEqual(cbrtExpected, cbrtResult));
+        double cbrtExpected = (double)Math.cbrt(125);
+        double cbrtResult = Misc.Root(125, 3);
+        Assert.assertTrue(Misc.areDoublesEqual(cbrtExpected, cbrtResult));
     }
 }

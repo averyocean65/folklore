@@ -39,29 +39,34 @@ public class Misc {
         return totalValue;
     }
 
-    public static boolean areFloatsEqual(float a, float b) {
-        float error = Math.abs(a - b);
-        return error < 0.00001f;
+    public static boolean areDoublesEqual(double a, double b) {
+        return areDoublesEqual(a, b, true);
     }
 
-    public static float Root(float base, float n) {
-        if(areFloatsEqual(n, 1)) {
+    public static boolean areDoublesEqual(double a, double b, boolean extraPrecision) {
+        double error = Math.abs(a - b);
+        double errorMargin = extraPrecision ? 0.00001f : 0.001f;
+        return error < errorMargin;
+    }
+
+    public static double Root(double base, double n) {
+        if(areDoublesEqual(n, 1)) {
             return base;
         }
 
-        if(areFloatsEqual(n, 2)) {
-            return (float)Math.sqrt(base);
+        if(areDoublesEqual(n, 2)) {
+            return Math.sqrt(base);
         }
 
-        if(areFloatsEqual(n, 3)) {
-            return (float)Math.cbrt(base);
+        if(areDoublesEqual(n, 3)) {
+            return Math.cbrt(base);
         }
 
-        float unrounded = (float) Math.pow(base, 1 / n);
-        return (float) Math.round(unrounded * 1000f) / 1000f;
+        double unrounded = Math.pow(base, 1 / n);
+        return (double) Math.round(unrounded * 1000f) / 1000f;
     }
 
-    public static float Log(float num, float base) {
-        return (float)(Math.log(num) / Math.log(base));
+    public static double Log(double num, double base) {
+        return (Math.log(num) / Math.log(base));
     }
 }
