@@ -20,9 +20,9 @@ public class FunctionTest {
         double sampledOne = myFunction.sample(1);
         double sampledTwo = myFunction.sample(2);
 
-        Assert.assertTrue(Misc.areDoublesEqual(expectedZero, sampledZero));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedOne, sampledOne));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedTwo, sampledTwo));
+        TestEssentials.compareDoubles(expectedZero, sampledZero);
+        TestEssentials.compareDoubles(expectedOne, sampledOne);
+        TestEssentials.compareDoubles(expectedTwo, sampledTwo);
     }
 
     @Test
@@ -43,11 +43,11 @@ public class FunctionTest {
         double sampledThree = myFunction.sample(3);
         double sampledFour = myFunction.sample(4);
 
-        Assert.assertTrue(Misc.areDoublesEqual(expectedZero, sampledZero));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedOne, sampledOne));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedTwo, sampledTwo));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedThree, sampledThree));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedFour, sampledFour));
+        TestEssentials.compareDoubles(expectedZero, sampledZero);
+        TestEssentials.compareDoubles(expectedOne, sampledOne);
+        TestEssentials.compareDoubles(expectedTwo, sampledTwo);
+        TestEssentials.compareDoubles(expectedThree, sampledThree);
+        TestEssentials.compareDoubles(expectedFour, sampledFour);
     }
 
     @Test
@@ -68,11 +68,11 @@ public class FunctionTest {
         double sampledThree = myFunction.sample(3);
         double sampledFour = myFunction.sample(4);
 
-        Assert.assertTrue(Misc.areDoublesEqual(expectedZero, sampledZero));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedOne, sampledOne));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedTwo, sampledTwo));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedThree, sampledThree));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedFour, sampledFour));
+        TestEssentials.compareDoubles(expectedZero, sampledZero);
+        TestEssentials.compareDoubles(expectedOne, sampledOne);
+        TestEssentials.compareDoubles(expectedTwo, sampledTwo);
+        TestEssentials.compareDoubles(expectedThree, sampledThree);
+        TestEssentials.compareDoubles(expectedFour, sampledFour);
     }
 
     @Test
@@ -93,10 +93,10 @@ public class FunctionTest {
         double sampledThree = myFunction.sample(3);
         double sampledFour = myFunction.sample(4);
 
-        Assert.assertTrue(Misc.areDoublesEqual(expectedZero, sampledZero));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedOne, sampledOne));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedTwo, sampledTwo));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedThree, sampledThree));
-        Assert.assertTrue(Misc.areDoublesEqual(expectedFour, sampledFour));
+        TestEssentials.compareDoubles(expectedZero, sampledZero);
+        TestEssentials.compareDoubles(expectedOne, sampledOne);
+        TestEssentials.compareDoubles(expectedTwo, sampledTwo);
+        TestEssentials.compareDoubles(expectedThree, sampledThree);
+        TestEssentials.compareDoubles(expectedFour, sampledFour);
     }
 }
