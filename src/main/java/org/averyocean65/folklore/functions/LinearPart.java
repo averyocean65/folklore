@@ -6,7 +6,7 @@ public class LinearPart extends FunctionPart {
     private double amplification;
     private double yOffset;
     
-    protected LinearPart(double amplification, double yOffset, Operator operatorToNext) {
+    public LinearPart(double amplification, double yOffset, Operator operatorToNext) {
         super(operatorToNext);
         this.amplification = amplification;
         this.yOffset = yOffset;

@@ -34,7 +34,7 @@ public class Function {
         parts[index] = replace;
     }
 
-    public double sampleFunction(double x) {
+    public double sample(double x) {
         double totalValue = 0;
         Operator operatorToNext = null;
         
