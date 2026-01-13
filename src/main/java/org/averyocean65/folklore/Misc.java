@@ -122,6 +122,8 @@ public class Misc {
             case Division -> {
                 return a / b;
             }
+
+            default -> throw new IllegalStateException("Unexpected value: " + operator);
         }
     }
 }
