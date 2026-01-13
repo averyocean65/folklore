@@ -1,6 +1,5 @@
 package org.averyocean65.folklore.functions;
 
-import jdk.jshell.spi.ExecutionControl;
 import org.averyocean65.folklore.Misc;
 import org.averyocean65.folklore.Operator;
 
@@ -45,7 +44,7 @@ public class Function {
 
             // ignore operatorToNext if i == 0
             if(i != 0) {
-                totalValue = Misc.Combine(totalValue, sampled, operatorToNext);
+                totalValue = Misc.combine(totalValue, sampled, operatorToNext);
             } else {
                 totalValue = sampled;
             }

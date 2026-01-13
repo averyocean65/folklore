@@ -34,7 +34,7 @@ public class MiscTest {
     @Test
     public void testRoots() {
         double cbrtExpected = (double)Math.cbrt(125);
-        double cbrtResult = Misc.Root(125, 3);
+        double cbrtResult = Misc.root(125, 3);
         Assert.assertTrue(Misc.areDoublesEqual(cbrtExpected, cbrtResult));
     }
 }

@@ -74,7 +74,7 @@ public class Misc {
      * @param n the degree of the root.
      * @return the nth root of base.
      */
-    public static double Root(double base, double n) {
+    public static double root(double base, double n) {
         if(areDoublesEqual(n, 1)) {
             return base;
         }
@@ -97,7 +97,7 @@ public class Misc {
      * @param n the base of the logarithm.
      * @return the logarithm of base n.
      */
-    public static double Log(double num, double n) {
+    public static double log(double num, double n) {
         return (Math.log(num) / Math.log(n));
     }
 
@@ -108,7 +108,7 @@ public class Misc {
      * @param operator the operation to perform.
      * @return the combined numbers.
      */
-    public static double Combine(double a, double b, Operator operator) {
+    public static double combine(double a, double b, Operator operator) {
         switch (operator) {
             case Addition -> {
                 return a + b;
