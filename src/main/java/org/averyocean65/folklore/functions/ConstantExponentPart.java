@@ -2,18 +2,20 @@ package org.averyocean65.folklore.functions;
 
 import org.averyocean65.folklore.Operator;
 
-public class LinearPart extends FunctionPart {
+public class ConstantExponentPart extends FunctionPart {
     private double amplification;
+    private double exponent;
     private double yOffset;
     private double xShift;
 
-    public LinearPart(double amplification, double yOffset, Operator operatorToNext) {
-        this(amplification, yOffset, 0, operatorToNext);
+    public ConstantExponentPart(double amplification, double exponent, Operator operatorToNext) {
+        this(amplification, exponent, 0.0, 0.0, operatorToNext);
     }
 
-    public LinearPart(double amplification, double yOffset, double xShift, Operator operatorToNext) {
+    public ConstantExponentPart(double amplification, double exponent, double xShift, double yOffset, Operator operatorToNext) {
         super(operatorToNext);
         this.amplification = amplification;
+        this.exponent = exponent;
         this.xShift = xShift;
         this.yOffset = yOffset;
     }
@@ -24,6 +26,14 @@ public class LinearPart extends FunctionPart {
 
     public void setAmplification(double amplification) {
         this.amplification = amplification;
+    }
+
+    public double getExponent() {
+        return exponent;
+    }
+
+    public void setExponent(double exponent) {
+        this.exponent = exponent;
     }
 
     public double getyOffset() {
@@ -44,6 +54,6 @@ public class LinearPart extends FunctionPart {
 
     @Override
     public double sample(double x) {
-        return (amplification * (x - xShift)) + yOffset;
+        return (amplification * Math.pow(x - xShift, exponent)) + yOffset;
     }
 }
