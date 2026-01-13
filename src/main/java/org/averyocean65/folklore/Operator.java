@@ -4,6 +4,5 @@ public enum Operator {
     Addition,
     Subtraction,
     Multiplication,
-    Division,
-    End
+    Division
 }

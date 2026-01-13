@@ -1,5 +1,7 @@
 package org.averyocean65.folklore;
 
+import org.averyocean65.folklore.functions.FunctionPart;
+
 /**
  * Modulates the output of a {@link FunctionPart}<br>
  * {@link FunctionPartType#Default} leaves x unchanged.<br>
