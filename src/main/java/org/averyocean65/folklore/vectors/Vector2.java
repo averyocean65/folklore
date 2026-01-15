@@ -9,25 +9,64 @@ public class Vector2 implements VectorBase<Vector2> {
         this.y = y;
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
     @Override
     public double getMagnitude() {
         return Math.sqrt(x*x + y*y);
     }
 
     @Override
-    public Vector2 getScaled(double factor) {
-        return null;
-    }
-
-    @Override
     public Vector2 getNormalized() {
-        double newX = x / getMagnitude();
-        double newY = y / getMagnitude();
-        return new Vector2(newX, newY);
+        return divide(getMagnitude());
     }
 
     @Override
     public double[] toArray() {
         return new double[] { x, y };
+    }
+
+    @Override
+    public Vector2 add(Vector2 other) {
+        return new Vector2(x + other.getX(), y + other.getY());
+    }
+
+    @Override
+    public Vector2 subtract(Vector2 other) {
+        return new Vector2(x - other.getX(), y - other.getY());
+    }
+
+    @Override
+    public Vector2 multiply(Vector2 other) {
+        return new Vector2(x * other.getX(), y * other.getY());
+    }
+
+    @Override
+    public Vector2 multiply(double other) {
+        return new Vector2(x * other, y * other);
+    }
+
+    @Override
+    public Vector2 divide(Vector2 other) {
+        return new Vector2(x / other.getX(), y / other.getY());
+    }
+
+    @Override
+    public Vector2 divide(double other) {
+        return new Vector2(x / other, y / other);
     }
 }

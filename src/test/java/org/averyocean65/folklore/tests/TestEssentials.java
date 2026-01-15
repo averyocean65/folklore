@@ -1,6 +1,5 @@
 package org.averyocean65.folklore.tests;
 
-import org.averyocean65.folklore.Fraction;
 import org.averyocean65.folklore.Misc;
 import org.junit.Assert;
 
