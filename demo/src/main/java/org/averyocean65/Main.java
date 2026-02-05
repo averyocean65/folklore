@@ -1,10 +1,11 @@
 package org.averyocean65;
 
 import org.averyocean65.folklore.Fraction;
+import org.averyocean65.gui.MainWindow;
 
 public class Main {
     public static void main(String[] args) {
-        Fraction f = new Fraction(1, 2);
-        System.out.println(f.toDecimal());
+        MainWindow mainWindow = new MainWindow();
+        mainWindow.show();
     }
 }
