@@ -48,6 +48,16 @@ public class MainWindow extends WindowWrapper {
             }
         });
 
+        JButton vectorDemoButton = new JButton("Vector Demo");
+        vectorDemoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VectorWindow vectorWindow = new VectorWindow();
+                vectorWindow.show();
+            }
+        });
+
         addElement(fractionDemoButton);
+        addElement(vectorDemoButton);
     }
 }
