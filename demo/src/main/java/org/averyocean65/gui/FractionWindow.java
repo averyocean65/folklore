@@ -52,6 +52,23 @@ public class FractionWindow extends WindowWrapper {
         backPanel.add(scalarLabel);
         backPanel.add(singularScalar);
 
+        createFunctionButton(backPanel, "Scale", () -> {
+            Result<Fraction> result = singularFraction.getFraction();
+            if(!result.success) {
+                JOptionPane.showMessageDialog(rootFrame, "Couldn't parse fraction!", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Result<Integer> parsed = Result.safeParseInt(singularScalar.getText());
+            if(!parsed.success) {
+                JOptionPane.showMessageDialog(rootFrame, "Couldn't parse scalar!", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Fraction f = result.value;
+            singularFraction.setFraction(f.scaleFraction(parsed.value));
+        });
+
         createFunctionButton(backPanel, "Inverse", () -> {
             Result<Fraction> result = singularFraction.getFraction();
             if(!result.success) {
@@ -87,22 +104,6 @@ public class FractionWindow extends WindowWrapper {
             singularFraction.setFraction(f.simplify());
         });
 
-        createFunctionButton(backPanel, "Scale", () -> {
-            Result<Fraction> result = singularFraction.getFraction();
-            if(!result.success) {
-                JOptionPane.showMessageDialog(rootFrame, "Couldn't parse fraction!", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            Result<Integer> parsed = Result.safeParseInt(singularScalar.getText());
-            if(!parsed.success) {
-                JOptionPane.showMessageDialog(rootFrame, "Couldn't parse scalar!", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            Fraction f = result.value;
-            singularFraction.setFraction(f.scaleFraction(parsed.value));
-        });
 
         panes.add("Single Fraction", backPanel);
     }
