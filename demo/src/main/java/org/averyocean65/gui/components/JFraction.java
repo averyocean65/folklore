@@ -1,4 +1,4 @@
-package org.averyocean65.gui;
+package org.averyocean65.gui.components;
 
 import org.averyocean65.folklore.Fraction;
 import org.averyocean65.utils.Result;

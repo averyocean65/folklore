@@ -1,5 +1,7 @@
 package org.averyocean65.gui;
 
+import org.averyocean65.gui.components.JSpacer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,7 +37,7 @@ public class MainWindow extends WindowWrapper {
         addElement(subtitleLabel);
 
         // SPACE
-        Spacer spacer = new Spacer(15);
+        JSpacer spacer = new JSpacer(15);
         addElement(spacer);
 
         // DEMO BUTTONS

@@ -1,7 +1,10 @@
 package org.averyocean65.gui;
 
 import org.averyocean65.folklore.Fraction;
+import org.averyocean65.gui.components.JFraction;
 import org.averyocean65.utils.Result;
+
+import static org.averyocean65.gui.GuiUtils.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,15 +30,6 @@ public class FractionWindow extends WindowWrapper {
         createMultiFractionPane();
 
         rootFrame.add(panes);
-    }
-
-    private void createFunctionButton(JComponent root, String name, Runnable function) {
-        JButton button = new JButton(name);
-        button.addActionListener(e -> {
-            function.run();
-        });
-
-        root.add(button);
     }
 
     private void createSingularFractionPane() {
